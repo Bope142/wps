@@ -9,7 +9,7 @@
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   position: sticky;
   top: 0;
-  z-index: 58;
+  z-index: 88;
 }
 
 .header__logo {
@@ -53,5 +53,88 @@
   opacity: 1;
   &:hover {
     opacity: 0.8;
+  }
+}
+
+.btn-menu {
+  background: $neutral_4;
+  display: none !important;
+  flex-direction: column;
+  row-gap: 5px;
+  padding: 10px !important;
+  border-radius: 0.2rem !important;
+  & * {
+    border-radius: 0.2rem !important;
+  }
+  & .line {
+    height: 2px;
+    width: 25px;
+    background: $neutral_1;
+    transition: transform 0.3s ease;
+  }
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 0.2rem !important;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.5s linear;
+    box-shadow: 0 0 5px 10px $neutral_4;
+  }
+  &:active:after {
+    box-shadow: 0 0 0 0 $neutral_4;
+    position: absolute;
+    border-radius: 0.2rem !important;
+    left: 0;
+    top: 0;
+    background: rgba($neutral_4, 0.15);
+    opacity: 1;
+    transition: 0s;
+  }
+}
+
+.btn-menu.active .line:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.btn-menu.active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.btn-menu.active .line:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+@media only screen and (max-width: 1665px) {
+  $padding__section: 130px;
+  .header {
+    padding: 15px $padding__section;
+  }
+}
+
+@media only screen and (max-width: 1220px) {
+  $padding__section: 50px;
+  .header {
+    padding: 15px $padding__section;
+  }
+}
+
+@media only screen and (max-width: 1090px) {
+  $padding__section: 20px;
+  .header {
+    padding: 15px $padding__section;
+  }
+}
+
+@media only screen and (max-width: 1010px) {
+  .header__nav,
+  #link__btn_contact {
+    display: none !important;
+  }
+  .btn-menu {
+    display: flex !important;
   }
 }

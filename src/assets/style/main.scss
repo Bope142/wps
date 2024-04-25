@@ -37,3 +37,33 @@ body {
   font-family: $font_regular;
   position: relative;
 }
+input {
+  border: 2px solid #a03232;
+  transition: all 0.3s linear;
+  box-shadow: 0 0 2px 5px #ffaa0000;
+
+  &:focus {
+    border: 2px solid #a03232;
+    box-shadow: 0 0 2px 5px #a0323227;
+  }
+}
+@media only screen and (max-width: 1665px) {
+  $padding__section: 130px;
+  .container__padding {
+    padding: 50px $padding__section;
+  }
+}
+
+@media only screen and (max-width: 1220px) {
+  $padding__section: 50px;
+  .container__padding {
+    padding: 50px $padding__section;
+  }
+}
+
+@media only screen and (max-width: 1090px) {
+  $padding__section: 20px;
+  .container__padding {
+    padding: 50px $padding__section;
+  }
+}

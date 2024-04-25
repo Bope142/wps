@@ -1,0 +1,47 @@
+@import "../../assets/style/variable.scss";
+
+.modal__reservation {
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.774);
+  position: fixed;
+  z-index: 89;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.active {
+  display: flex !important;
+}
+
+.container__modal {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border-radius: 0.5rem;
+  background: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  order: 8;
+  max-width: 500px;
+  min-width: 300px;
+  & .box__header {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.185);
+    padding-bottom: 15px;
+    justify-content: space-between;
+    & svg {
+      height: 2rem;
+      width: 2rem;
+      flex: none;
+      color: $neutral_3;
+      cursor: pointer;
+    }
+    & .title {
+      font-family: $font_bold;
+      font-size: 1.4rem;
+      color: $neutral_1;
+    }
+  }
+}

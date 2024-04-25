@@ -27,6 +27,9 @@ import { MdOutlineSignalWifi4Bar } from "react-icons/md";
 import { IoTvSharp } from "react-icons/io5";
 import { FaAirFreshener } from "react-icons/fa";
 import Footer from "../../component/footer";
+import NavMobile from "../../component/navMobile";
+import ModalReservation from "../../component/modal";
+import { useState } from "react";
 
 const FormBookReservations = () => {
   return (
@@ -42,8 +45,20 @@ const FormBookReservations = () => {
         id="rdv__form"
       >
         <div className="date__box">
-          <input type="date" name="" id="" />
-          <input type="time" name="" id="" />
+          <input
+            type="date"
+            name=""
+            id=""
+            placeholder="MM/DD/YYYY"
+            defaultValue="2024-04-24"
+          />
+          <input
+            type="time"
+            name=""
+            id=""
+            placeholder="hh"
+            defaultValue="12:00"
+          />
         </div>
         <button className="btn btn__submit__form">Envoyer une démande</button>
       </form>
@@ -66,11 +81,23 @@ const FormBookVerification = () => {
       >
         <div className="date__box_content">
           <label htmlFor="dateStart">Date d'arrivée</label>
-          <input type="date" name="dateStart" id="" />
+          <input
+            type="date"
+            name="dateStart"
+            id=""
+            placeholder="MM/DD/YYYY"
+            defaultValue="2024-04-24"
+          />
         </div>
         <div className="date__box_content">
           <label htmlFor="dateEnd">Date de départ</label>
-          <input type="date" name="dateEnd" id="" />
+          <input
+            type="date"
+            name="dateEnd"
+            id=""
+            placeholder="MM/DD/YYYY"
+            defaultValue="2024-04-28"
+          />
         </div>
         <div className="date__box_content">
           <label htmlFor="countAdult">Adulte</label>
@@ -209,21 +236,29 @@ const BoxMaps = () => {
   );
 };
 
-const BoxCTA = () => {
+type props = {
+  openModal: (active: boolean) => void;
+};
+const BoxCTA = ({ openModal }: props) => {
+  const handleClick = () => {
+    openModal(true); // Appel de la fonction pour ouvrir le modal
+  };
   return (
     <div className="box__container cta">
       <p>
-        Ne manquez pas <span> l'opportunité</span> de vivre une{" "}
-        <span>expérience</span>
-        unique à <span>Kinshasa</span> !🤩
+        Ne manquez pas <span> l'opportunité</span> de vivre une
+        <span> expérience </span>
+        unique à <span> Kinshasa</span> !🤩
       </p>
-      <button className="btn" id="btn__book__now">
+      <button className="btn" id="btn__book__now" onClick={handleClick}>
         Réservez maintenant
       </button>
     </div>
   );
 };
 function BookingPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false); // État pour contrôler la visibilité du modal
+
   const pictures = [
     { cover: cover1, url: "/images/cover/cover1.webp" },
     { cover: cover2, url: "/images/cover/cover2.webp" },
@@ -240,6 +275,7 @@ function BookingPage() {
   return (
     <>
       <Header />
+      <NavMobile />
       <BoxCoverHouse pictureList={pictures} />
       <section className="container__padding" id="house__infos">
         <div className="details__box">
@@ -269,9 +305,10 @@ function BookingPage() {
         <div className="aside__container">
           <FormBookReservations />
           <FormBookVerification />
-          <BoxCTA />
+          <BoxCTA openModal={setIsModalOpen} />
         </div>
       </section>
+      <ModalReservation active={isModalOpen} setActive={setIsModalOpen} />
       <Footer />
     </>
   );

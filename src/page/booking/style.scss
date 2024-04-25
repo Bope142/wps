@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: 1fr 400px;
   gap: 20px;
+  position: relative;
 }
 
 .details__box {
@@ -15,7 +16,7 @@
     font-family: $font_medium;
     font-size: 2.5rem;
     color: $neutral_1;
-    line-height: 3rem;
+    line-height: 2.6rem;
   }
 
   & .info__box {
@@ -39,8 +40,8 @@
 }
 
 .content__box__infos {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -106,7 +107,7 @@
   flex-direction: column;
   row-gap: 25px;
   position: sticky;
-  top: 25px;
+  top: 0;
 }
 
 .cta {
@@ -128,6 +129,7 @@
   border-radius: 0.5rem;
   background: white;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  order: 8;
   & .box__header {
     display: flex;
     align-items: center;
@@ -186,6 +188,7 @@
 #btn__book__now {
   background: $neutral_3;
   color: white;
+  align-self: center;
   &::after {
     content: "";
     display: block;
@@ -208,5 +211,47 @@
     background: rgba($neutral_3, 0.15);
     opacity: 1;
     transition: 0s;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  #house__infos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+  }
+  .content__overview__box {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  .cta {
+    order: 4 !important;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .content__overview__box {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .content__overview__box {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .date__box {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: stretch !important;
+
+    & input {
+      align-self: stretch !important;
+    }
+  }
+  .btn__submit__form,
+  #btn__book__now {
+    align-self: stretch !important;
   }
 }

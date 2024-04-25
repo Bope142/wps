@@ -7,6 +7,8 @@
   align-items: center;
   justify-content: space-between;
   background: $neutral_1;
+
+  gap: 20px;
   & p {
     color: rgba(255, 255, 255, 0.959);
   }
@@ -30,6 +32,35 @@
     }
     & svg {
       color: white;
+      height: 0.8rem;
+      width: 0.8rem;
     }
+  }
+}
+
+@media only screen and (max-width: 1665px) {
+  $padding__section: 130px;
+  .footer {
+    padding: 25px $padding__section;
+  }
+}
+
+@media only screen and (max-width: 1220px) {
+  $padding__section: 50px;
+  .footer {
+    padding: 25px $padding__section;
+  }
+}
+
+@media only screen and (max-width: 1090px) {
+  $padding__section: 20px;
+  .footer {
+    padding: 25px $padding__section;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .footer {
+    flex-direction: column;
   }
 }
