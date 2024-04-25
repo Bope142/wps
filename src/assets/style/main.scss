@@ -1,0 +1,39 @@
+@import "./reset.scss";
+@import "./variable.scss";
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+}
+
+* {
+  user-select: none !important;
+  font-family: $font_regular;
+}
+#root {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.container__padding {
+  padding: 50px $padding__section;
+}
+
+.btn {
+  outline: none;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 0.3rem;
+  font-family: $font_regular;
+  position: relative;
+}

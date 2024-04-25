@@ -1,0 +1,69 @@
+@font-face {
+  font-family: "Poppins-Black";
+  src: url("../fonts/Poppins-Black.ttf");
+}
+@font-face {
+  font-family: "Poppins-Bold";
+  src: url("../fonts/Poppins-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Poppins-SemiBold";
+  src: url("../fonts/Poppins-SemiBold.ttf");
+}
+@font-face {
+  font-family: "Poppins-Medium";
+  src: url("../fonts/Poppins-Medium.ttf");
+}
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url("../fonts/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: "Poppins-Light";
+  src: url("../fonts/Poppins-Light.ttf");
+}
+
+/*Export fonts */
+@font-face {
+  font-family: "ClashGrotesk-Bold";
+  src: url("../fonts/ClashGrotesk-Bold.otf");
+}
+@font-face {
+  font-family: "ClashGrotesk-Semibold";
+  src: url("../fonts/ClashGrotesk-Semibold.otf");
+}
+@font-face {
+  font-family: "ClashGrotesk-Medium";
+  src: url("../fonts/ClashGrotesk-Medium.otf");
+}
+@font-face {
+  font-family: "ClashGrotesk-Regular";
+  src: url("../fonts/ClashGrotesk-Regular.otf");
+}
+@font-face {
+  font-family: "ClashGrotesk-Light";
+  src: url("../fonts/ClashGrotesk-Light.otf");
+}
+@font-face {
+  font-family: "ClashGrotesk-Extralight";
+  src: url("../fonts/ClashGrotesk-Extralight.otf");
+}
+
+// $font_black: "Poppins-Black", "sans-serif";
+// $font_bold: "Poppins-Bold", "sans-serif";
+// $font_medium: "Poppins-Medium", "sans-serif";
+// $font_regular: "Poppins-Regular", "sans-serif";
+// $font_light: "Poppins-Light", "sans-serif";
+$font_black: "ClashGrotesk-Semibold", sans-serif;
+$font_bold: "ClashGrotesk-Bold", sans-serif;
+$font_medium: "ClashGrotesk-Medium", sans-serif;
+$font_regular: "ClashGrotesk-Regular", sans-serif;
+$font_light: "ClashGrotesk-Light", sans-serif;
+$fontExtraLight: "ClashGrotesk-ExtraLight", sans-serif;
+$neutral_1: #202020;
+$neutral_2: #ffffff;
+$neutral_3: #a03232;
+$neutral_4: #f99419;
+
+$padding__section: 120px;

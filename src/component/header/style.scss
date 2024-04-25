@@ -1,0 +1,57 @@
+@import "../../assets/style/variable.scss";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px $padding__section;
+  background: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 58;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transform: translateX(-20%);
+  & img {
+    height: 50%;
+    width: 50%;
+    object-fit: cover;
+  }
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+  & .nav__item {
+    font-family: $font_medium !important;
+    font-size: 1rem;
+    text-decoration: none;
+    color: $neutral_1;
+    transition: all 0.3s linear;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+#link__btn_contact {
+  padding: 20px 35px;
+  background: $neutral_4;
+  border-radius: 0.2rem;
+  font-family: $font_medium !important;
+  font-size: 1rem;
+  text-decoration: none;
+  color: $neutral_1;
+  transition: all 0.3s linear;
+  opacity: 1;
+  &:hover {
+    opacity: 0.8;
+  }
+}
