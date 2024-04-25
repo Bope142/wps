@@ -1,70 +1,133 @@
 @import "../../assets/style/variable.scss";
 
 .container__cover {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
   height: 500px;
   overflow: hidden;
   flex: none !important;
   position: relative;
   overflow: hidden !important;
-  padding-top: 15px !important;
+  // padding-top: 15px !important;
   padding-bottom: 15px !important;
   transition: all 0.3s linear;
+  padding: 10px 25px;
+  border-radius: 0.5rem;
 }
 
-.others__cover {
-  display: grid;
-  margin-top: auto;
+.main__cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  gap: 5px;
-  left: 0;
-  width: 100%;
-  & .active__box {
-    border: 3px solid $neutral_4 !important;
-    &::after {
-      background: rgba(0, 0, 0, 0.512) !important;
-    }
+  border-top-left-radius: 0.8rem;
+  border-bottom-left-radius: 0.8rem;
+  position: relative;
+  & img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
-  & .box__others {
-    height: 100px;
-    border-radius: 0.5rem;
-    overflow: hidden;
+  & .player__container {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: auto;
-
-    border: 3px solid transparent;
-    cursor: pointer;
-    transition: all 0.3s linear;
-    position: relative;
-    &:hover {
-      &::after {
-        background: rgba(0, 0, 0, 0.512);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.361);
+    & .btn__play {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      padding: 35px;
+      border: 5px solid white;
+      background: transparent;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      & svg {
+        height: 3.5rem;
+        width: 3.5rem;
+        color: white;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       }
-    }
-    &::after {
-      content: "";
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      background: rgba(0, 0, 0, 0);
-      transition: all 0.3s linear;
-    }
-    & img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
     }
   }
 }
+.others__cover {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px !important;
+  overflow: hidden;
+  border-top-right-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
+}
+// .others__cover {
+//   display: grid;
+//   margin-top: auto;
+//   overflow: hidden;
+//   gap: 5px;
+//   left: 0;
+//   width: 100%;
+//   & .active__box {
+//     border: 3px solid $neutral_4 !important;
+//     &::after {
+//       background: rgba(0, 0, 0, 0.512) !important;
+//     }
+//   }
+//   & .box__others {
+//     height: 100px;
+//     border-radius: 0.5rem;
+//     overflow: hidden;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     width: auto;
 
-@media only screen and (max-width: 1050px) {
-  .others__cover {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr) !important;
+//     border: 3px solid transparent;
+//     cursor: pointer;
+//     transition: all 0.3s linear;
+//     position: relative;
+//     &:hover {
+//       &::after {
+//         background: rgba(0, 0, 0, 0.512);
+//       }
+//     }
+//     &::after {
+//       content: "";
+//       position: absolute;
+//       height: 100%;
+//       width: 100%;
+//       background: rgba(0, 0, 0, 0);
+//       transition: all 0.3s linear;
+//     }
+//     & img {
+//       height: 100%;
+//       width: 100%;
+//       object-fit: cover;
+//     }
+//   }
+// }
+
+// @media only screen and (max-width: 1050px) {
+//   .others__cover {
+//     display: grid;
+//     grid-template-columns: repeat(5, 1fr) !important;
+//   }
+// }
+
+.cover__box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  & img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
 }
 
