@@ -26,6 +26,8 @@ import { FaKitchenSet } from "react-icons/fa6";
 import { MdOutlineSignalWifi4Bar } from "react-icons/md";
 import { IoTvSharp } from "react-icons/io5";
 import { FaAirFreshener } from "react-icons/fa";
+import Footer from "../../component/footer";
+
 const FormBookReservations = () => {
   return (
     <div className="box__aside">
@@ -270,6 +272,7 @@ function BookingPage() {
           <BoxCTA />
         </div>
       </section>
+      <Footer />
     </>
   );
 }

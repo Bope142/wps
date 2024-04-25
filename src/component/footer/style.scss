@@ -1,0 +1,35 @@
+@import "../../assets/style/variable.scss";
+
+.footer {
+  margin-top: auto;
+  padding: 25px $padding__section;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $neutral_1;
+  & p {
+    color: rgba(255, 255, 255, 0.959);
+  }
+}
+
+.social__media {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  & .social__media__footer {
+    padding: 10px;
+    border-radius: 50%;
+    background: $neutral_3;
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s linear all;
+    &:hover {
+      opacity: 0.5;
+    }
+    & svg {
+      color: white;
+    }
+  }
+}
